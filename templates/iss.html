@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ISS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="row header-row">
+      <div class="col-md-2 offset-md-5" align="center">
+        <h1>ISS<img src="https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png"/></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card text-center">
+      <div class="card-header">
+        Current ISS Position
+      </div>
+      <div class="card-body">
+        Latitude: {{ current_location.iss_position.latitude }} Longitude: {{ current_location.iss_position.longitude }}
+      </div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-header">
+        Next Pass Time
+      </div>
+      <p class="card-text">Enter your postcode below to find the ISS' next pass time.</p>
+      <div id="postcode-form">
+        <form method="post" action="/iss"
+          <label for="postcode"></label>
+          <input type="text" id="postcode" name="postcode">
+          <input type="submit" id="submit-button" value="Submit">
+        </form>
+      </div>
+      {% if pass_time != None %}
+        <h4>Pass time for: {{ postcode }}</h4>
+        {{ pass_time }}
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

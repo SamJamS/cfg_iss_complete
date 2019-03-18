@@ -1,0 +1,32 @@
+.iss-header {
+  height: 50px;
+  align-content: center;
+}
+
+.iss-header h1 {
+  max-height: 100%;
+}
+
+.iss-header img {
+  width: auto;
+  max-height: 100%;
+}
+
+img {
+  width: auto;
+  max-height: 100%;
+  height: 70px;
+}
+
+.row header-row {
+  height: 80px;
+}
+
+.card {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+p {
+  margin-top: 15px;
+}
